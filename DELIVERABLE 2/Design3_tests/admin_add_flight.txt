@@ -1,0 +1,7 @@
+Feature: Admin Adding Flights
+
+  Scenario: Adding a new flight
+    Given the admin is logged in
+    When they fill out the flight number, where it's going, and when it leaves
+    And they click the add button
+    Then the flight should show up in the system

@@ -1,0 +1,6 @@
+Feature: Checking In for a Flight
+
+  Scenario: Doing a check-in
+    Given I already booked a flight
+    When I hit the Check-in button
+    Then the system should save the time I checked in

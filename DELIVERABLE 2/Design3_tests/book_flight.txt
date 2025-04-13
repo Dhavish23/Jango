@@ -1,0 +1,8 @@
+Feature: Booking a Flight
+
+  Scenario: I pick and book a flight
+    Given I’m logged in
+    And I see a list of flights
+    When I pick one and choose my seat
+    Then it should say it’s booked
+    And it should show up under my bookings

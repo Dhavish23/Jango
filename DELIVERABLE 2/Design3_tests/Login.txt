@@ -1,0 +1,13 @@
+Feature: Logging in and Signing up
+
+  Scenario: Signing up for an account
+    Given I'm on the sign-up page
+    When I type my name, email, and a password
+    And I hit the sign-up button
+    Then my account should be created
+
+  Scenario: Logging into my account
+    Given I already have an account
+    When I type in my email and password
+    And click login
+    Then I should get into my dashboard

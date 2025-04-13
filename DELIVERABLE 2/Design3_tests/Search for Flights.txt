@@ -1,0 +1,8 @@
+Feature: Searching Flights
+
+  Scenario: I want to find flights to somewhere 
+    Given I’m logged in
+    When I type "Dublin" as the place I'm leaving from
+    And "Dubai" as where I wanna go
+    And I hit search
+    Then the app should show me flights that match

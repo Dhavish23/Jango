@@ -1,0 +1,6 @@
+Feature: Viewing My Bookings
+
+  Scenario: Checking what I’ve booked
+    Given I’m logged in
+    When I go to "My Bookings"
+    Then I should see all the flights I booked, past and future
