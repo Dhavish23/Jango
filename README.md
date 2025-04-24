@@ -12,9 +12,8 @@ This is a school project I made using Django. It's kind of like a mini system fo
 - Students can enroll in stuff
 - Trainers can see who's in their module
 - Coordinators get their own special dashboard
-- Looks nice on mobile thanks to Bootstrap
 - Has a few automatic tests to make sure it works
-- Comes with an admin page too (for teachers or whoever)
+- Comes with an admin page too 
 
 ---
 
