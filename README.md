@@ -22,7 +22,7 @@ The Roles
 - The Student – signs up and joins training stuff
 - TheTrainer – teaches the module and checks who's in it
 - The Coordinator – kind of like a manager, they see everything
-- The Admin* – full access with Django admin
+- The Admin – full access with Django admin
 
 ---
 
