@@ -1,0 +1,42 @@
+{% extends "flights/base.html" %} <!-- Use the base layout -->
+
+{% block title %}Home{% endblock %} <!-- Page title -->
+
+{% block content %}
+<form method="get" action="." class="mb-4">
+    <input type="text" name="q" placeholder="Search modules..." value="{{ request.GET.q }}" class="form-control" />
+</form>
+
+<h1 class="mb-4">Available Training Modules</h1> <!-- Page heading -->
+
+{% if user.is_authenticated %}
+{% for module in modules %} <!-- Loop through modules -->
+<div class="card mb-3 position-relative">
+    <!-- Full card clickable -->
+    <a href="{% url 'module_video' module.id %}" class="stretched-link"
+        style="text-decoration: none; color: inherit;"></a>
+
+    <div class="card-body">
+        <h5 class="card-title">{{ module.title }}</h5> <!-- Module title -->
+        <p class="card-text">{{ module.description }}</p> <!-- Module description -->
+        <p class="card-text"><small>Trainer: {{ module.trainer.username }}</small></p> <!-- Trainer name -->
+        <p class="card-text"><small>Starts: {{ module.start_date }}</small></p> <!-- Start date -->
+
+        {% if module.id in enrolled_ids %}
+        <span class="badge bg-success">✅ Enrolled</span> <!-- Show enrolled badge -->
+        {% else %}
+        <!-- Enroll button isolated from stretched-link -->
+        <div class="position-relative" style="z-index: 1;">
+            <a href="{% url 'enroll' module.id %}" class="btn btn-primary btn-sm">Enroll</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<p>
+    <a href="{% url 'login' %}" class="btn btn-outline-primary">Login</a> or
+    <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register</a> to enroll.
+</p>
+{% endif %}
+{% endblock %}

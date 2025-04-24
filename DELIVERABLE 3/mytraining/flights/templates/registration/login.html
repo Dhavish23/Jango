@@ -1,0 +1,12 @@
+{% extends "flights/base.html" %} <!-- Use the base layout -->
+
+{% block title %}Login{% endblock %} <!-- Page title -->
+
+{% block content %}
+<h2>Login</h2> <!-- Heading -->
+<form method="post"> <!-- Login form -->
+    {% csrf_token %} <!-- Keeps the form safe -->
+    {{ form.as_p }} <!-- Show the form fields -->
+    <button type="submit" class="btn btn-primary">Login</button> <!-- Login button -->
+</form>
+{% endblock %}

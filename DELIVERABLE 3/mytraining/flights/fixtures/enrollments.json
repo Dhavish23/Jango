@@ -1,0 +1,11 @@
+[
+    {
+        "model": "flights.enrollment",
+        "pk": 1,
+        "fields": {
+            "student": 3,
+            "module": 1,
+            "enrolled_on": "2025-04-23"
+        }
+    }
+]

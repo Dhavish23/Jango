@@ -1,0 +1,22 @@
+[
+    {
+        "model": "flights.module",
+        "pk": 1,
+        "fields": {
+            "title": "Cabin Safety",
+            "description": "Learn cabin safety procedures.",
+            "start_date": "2025-04-30",
+            "trainer": 2
+        }
+    },
+    {
+        "model": "flights.module",
+        "pk": 2,
+        "fields": {
+            "title": "Emergency Protocols",
+            "description": "Handle in-flight emergencies like a pro.",
+            "start_date": "2025-05-01",
+            "trainer": 2
+        }
+    }
+]

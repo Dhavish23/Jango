@@ -1,0 +1,21 @@
+{% extends "flights/base.html" %} <!-- Use the base layout -->
+
+{% block title %}Trainer Dashboard{% endblock %} <!-- Page title -->
+
+{% block content %}
+<h1 class="mb-4">Trainer Dashboard</h1> <!-- Page heading -->
+
+{% if modules %}
+{% for module in modules %} <!-- Loop through modules -->
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ module.title }}</h5> <!-- Module title -->
+        <p>{{ module.description }}</p> <!-- Module description -->
+        <p><small>Start Date: {{ module.start_date }}</small></p> <!-- Start date -->
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<p>You haven't created any modules yet.</p> <!-- No modules message -->
+{% endif %}
+{% endblock %}

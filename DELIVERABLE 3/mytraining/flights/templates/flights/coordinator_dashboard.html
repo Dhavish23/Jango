@@ -1,0 +1,41 @@
+{% extends "flights/base.html" %} <!-- Use the base layout -->
+
+{% block title %}Coordinator Dashboard{% endblock %} <!-- Page title -->
+
+{% block content %}
+<h2>Coordinator Dashboard</h2> <!-- Page heading -->
+<p>Welcome, {{ user.first_name }}. You are logged in as a <strong>Coordinator</strong>.</p> <!-- Welcome message -->
+
+<!-- Quick stats -->
+<ul class="list-group list-group-flush mb-4">
+    <li class="list-group-item">📦 Total Modules: <strong>{{ total_modules }}</strong></li> <!-- Total modules -->
+    <li class="list-group-item">👥 Total Students: <strong>{{ total_students }}</strong></li> <!-- Total students -->
+    <li class="list-group-item">📚 Total Enrollments: <strong>{{ total_enrollments }}</strong></li>
+    <!-- Total enrollments -->
+</ul>
+
+<!-- Module table -->
+<h5>All Training Modules</h5> <!-- Table heading -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Module</th> <!-- Module column -->
+            <th>Trainer</th> <!-- Trainer column -->
+            <th>Start Date</th> <!-- Start date column -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for module in modules %}
+        <tr>
+            <td>{{ module.title }}</td> <!-- Module title -->
+            <td>{{ module.trainer.username }}</td> <!-- Trainer name -->
+            <td>{{ module.start_date }}</td> <!-- Start date -->
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No modules found.</td> <!-- No modules message -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

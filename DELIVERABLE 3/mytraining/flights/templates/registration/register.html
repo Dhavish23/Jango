@@ -1,0 +1,13 @@
+{% extends "flights/base.html" %} <!-- Use the base layout -->
+
+{% block title %}Register{% endblock %} <!-- Page title -->
+
+{% block content %}
+<h2 class="mb-3">Create an Account</h2> <!-- Page heading -->
+
+<form method="post" class="w-50"> <!-- Form to sign up -->
+    {% csrf_token %} <!-- Keep the forms safe -->
+    {{ form.as_p }} <!-- Show the form -->
+    <button type="submit" class="btn btn-success">Register</button> <!-- Button to sign up -->
+</form>
+{% endblock %}

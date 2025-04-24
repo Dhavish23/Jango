@@ -1,0 +1,18 @@
+{% extends "flights/base.html" %} <!-- Use the base layout -->
+
+{% block title %}{{ module.title }}{% endblock %} <!-- Page title -->
+
+{% block content %}
+<h1>{{ module.title }}</h1> <!-- Module title -->
+<p>{{ module.description }}</p> <!-- Module description -->
+<p><strong>Trainer:</strong> {{ module.trainer.username }}</p> <!-- Trainer name -->
+<p><strong>Start Date:</strong> {{ module.start_date }}</p> <!-- Start date -->
+
+{% if module.video_url %}
+<div class="ratio ratio-16x9">
+    <iframe src="{{ module.video_url }}" frameborder="0" allowfullscreen></iframe> <!-- Show video -->
+</div>
+{% else %}
+<p><em>No video available for this module.</em></p> <!-- No video message -->
+{% endif %}
+{% endblock %}
